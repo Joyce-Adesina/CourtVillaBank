@@ -21,9 +21,15 @@ namespace CourtVillaBank.Core.Services.Implementation
             _unitOfWork = unitOfWork;
         }
         public async Task<Account> CreateAccount(int userid,string firstName,string LastName,string email,int transactionPin,string phoneNumber,string accountType)
+        {
+            _unitOfWork.AccountRepository.VerifyAccount
+           {
+                return await _unitOfWork.AccountRepository.VerifyAccount(accountNumber);
+           }
+            
+            
 
-
-            Account account = new()
+            Account account = new 
             {
                 UserId = userId,
                 FirstName = firstName,
